@@ -519,8 +519,15 @@ class SimpleHairAnalysisService:
         """특정 건강 지표의 조건별 멘트 추출"""
         patterns_to_try = []
 
-        # 특별 조건들
-        if health_name == "면역 및 피부 건강" and value == "높음":
+        # 특별 조건들 - 부신 활성도 높음 처리
+        if health_name == "부신 활성도" and value == "높음":
+            # 수은이 높지 않은 경우 -> "일반" 조건 사용
+            mercury_high = input_data.heavy_metals.mercury == HeavyMetalValue.HIGH
+            if not mercury_high:
+                # 일반 부신 높음 조건 우선 시도
+                patterns_to_try.append(f"### 부신 활성도 - 높음 \\(일반\\)\\s*\\*\\*조건\\*\\*.*?\\*\\*최종 멘트\\*\\*:\\s*(.*?)(?=\\n### |\\n---|\Z)")
+
+        elif health_name == "면역 및 피부 건강" and value == "높음":
             # 연령별 구분이 있는 경우
             if age <= 19:
                 patterns_to_try.append(f"### {health_name} - {value} \\(19세 이하\\)\\s*\\*\\*조건\\*\\*.*?\\*\\*최종 멘트\\*\\*: (.+?)(?=\\*\\*비고|\\n\\n|###)")
