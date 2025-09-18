@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Fix Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9fafb;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+        }
+        .comprehensive-analysis-container {
+            background-color: #f0fdf4;
+            padding: 16px;
+            border-radius: 6px;
+            border-left: 3px solid #22c55e;
+            margin: 10px 0;
+        }
+        .comprehensive-analysis-content {
+            min-height: auto !important;
+            height: auto !important;
+            max-height: none !important;
+            overflow: visible !important;
+            white-space: pre-wrap !important;
+            word-wrap: break-word !important;
+            font-family: Inter, system-ui, sans-serif;
+            color: #374151;
+            line-height: 1.375;
+            font-size: 0.875rem;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        .info {
+            background-color: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Frontend Comprehensive Analysis Fix Test</h1>
+
+        <div class="test-section">
+            <h2>✅ Issue Identified</h2>
+            <div class="status info">
+                <strong>Problem:</strong> comprehensive_analysis field showing only first paragraph instead of full content
+            </div>
+            <div class="status info">
+                <strong>Root Cause:</strong> No direct text truncation in JavaScript - likely CSS layout or scrolling issue
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔧 Fixes Applied</h2>
+            <ul>
+                <li>✅ Added <code>comprehensive-analysis-content</code> class to both rendering components</li>
+                <li>✅ Enhanced CSS to ensure full text visibility with proper overflow handling</li>
+                <li>✅ Improved scrollbar visibility and styling for better user experience</li>
+                <li>✅ Added explicit CSS rules to prevent height/overflow restrictions</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>📊 Sample Content Test</h2>
+            <p><strong>This simulates how the comprehensive_analysis should now display:</strong></p>
+
+            <div class="comprehensive-analysis-container">
+                <div class="comprehensive-analysis-content">**유해 중금속 분석**
+검사 결과, 모든 유해 중금속 수치가 정상 범위에 있어 안심하셔도 됩니다. 수은, 비소, 카드뮴, 납, 알루미늄, 바륨, 니켈, 우라늄, 비스무트 모든 항목에서 양호한 결과를 보이고 있습니다.
+
+**영양 미네랄 분석**
+칼슘, 마그네슘, 나트륨, 칼륨, 구리, 아연, 인, 철, 망간, 크롬, 셀레늄 등 모든 필수 미네랄이 정상 범위에 있습니다. 균형 잡힌 영양소 섭취가 잘 이루어지고 있는 상태입니다.
+
+**건강 상태 지표 분석**
+- 인슐린 민감도: 정상
+- 자율신경계: 정상
+- 스트레스 상태: 높음 ⚠️
+- 면역/피부 건강: 정상
+- 부신 활성도: 높음 ⚠️
+- 갑상선 활성도: 정상
+
+**주요 관심 사항**
+현재 스트레스 상태와 부신 활성도가 높게 나타나고 있어 주의가 필요합니다. 이는 장기간의 스트레스 노출이나 과도한 업무, 수면 부족 등과 관련이 있을 수 있습니다.</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🎯 Expected Results</h2>
+            <div class="status success">
+                ✅ Full comprehensive_analysis text should now be visible<br>
+                ✅ All sections (유해 중금속, 영양 미네랄, 건강 상태 지표) should display<br>
+                ✅ Scrolling should work properly in the right panel<br>
+                ✅ No text truncation should occur
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📝 Files Modified</h2>
+            <ul>
+                <li><code>/Users/yujineom/Tmp/qha_total_re/frontend/dist/assets/index-D7R5-D-6.js</code></li>
+                <li>Added CSS rules for <code>.comprehensive-analysis-content</code></li>
+                <li>Enhanced scrollbar styling for better visibility</li>
+                <li>Added class names to both xH and EH components</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
